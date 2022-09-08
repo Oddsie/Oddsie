@@ -1,2 +1,0 @@
-var f=open('hw.od','a')
-do f.write ";;sHello"
