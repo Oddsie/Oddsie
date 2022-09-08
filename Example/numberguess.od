@@ -1,0 +1,10 @@
+use random
+display "NUMBER;sGUESS"
+var guess=int(input(":"))
+var actual=random.randint(1, 10)
+if guess==actual:
+	display "Good;sGuess!"
+end
+otherwise:
+	display "Incorrect!;sNumber;swas;s"+str(actual)+"!"
+end
