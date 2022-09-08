@@ -1,0 +1,4 @@
+define main():
+  display "Hello,;sWorld!"
+end
+do main
