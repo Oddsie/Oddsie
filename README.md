@@ -4,3 +4,4 @@ Oddsie is a programming language that transpiles into Python. It is designed to 
 Run install.sh.
 # Requires
 - Python interpreter
+- Linux
