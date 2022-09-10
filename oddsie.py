@@ -21,6 +21,8 @@ if argv[1]=="transpile":
 		l_t=int(l_t)
 		line=line.replace("\n","")
 		tokens=line.replace("\t","").split()
+		if l_n==1 and tokens[0]=="name":
+			o_f=open(line+".py","w")
 		if tokens[0]=="end":
 			l_t-=1
 			print("KEYWORD FOUND: END")
@@ -65,7 +67,7 @@ if argv[1]=="transpile":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+tokens[1].replace(";s"," "))
 			print("KEYWORD FOUND: VAR")
-		elif tokens[0]==";":
+		elif tokens[0]==";" or tokens[0]=="//":
 			o_l.append("#"+tokens[1].replace(";s"," "))
 			print("KEYWORD FOUND: COMMENT")
 		else:print("WARNING: No keywords detected at line "+str(l_n))
