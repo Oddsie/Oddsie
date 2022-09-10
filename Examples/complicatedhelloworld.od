@@ -1,4 +1,6 @@
 define main():
-  display "Hello,;sWorld!"
+  if SP=="YES":
+    display "Hello,;sWorld!"
+  end
 end
-do main
+do main "YES"
