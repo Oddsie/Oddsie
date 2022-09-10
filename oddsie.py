@@ -21,8 +21,6 @@ if argv[1]=="transpile":
 		l_t=int(l_t)
 		line=line.replace("\n","")
 		tokens=line.replace("\t","").split()
-		if l_n==1 and tokens[0]=="name":
-			o_f=open(line+".py","w")
 		if tokens[0]=="end":
 			l_t-=1
 			print("KEYWORD FOUND: END")
