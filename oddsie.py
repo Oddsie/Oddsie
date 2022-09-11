@@ -68,6 +68,9 @@ if argv[1]=="transpile":
 		elif tokens[0]==";" or tokens[0]=="//":
 			o_l.append("#"+tokens[1].replace(";s"," "))
 			print("KEYWORD FOUND: COMMENT")
+		elif tokens[0]=="set":
+			o_l.append("class "+tokens[1])
+			print("KEYWORD FOUND: SET")
 		else:print("WARNING: No keywords detected at line "+str(l_n))
 		if line.endswith(":"):l_t+=1
 		l_n+=1
