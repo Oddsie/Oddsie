@@ -1,0 +1,17 @@
+; ReallyComplicatedHelloWorld
+set HelloWorld1:
+	var txt=""
+	define o():
+		var txt=txt+"hello"
+	end
+	define t():
+		var txt=txt+";sworld!"
+	end
+	define th():
+		display txt
+	end
+end
+one=HelloWorld1()
+one.o()
+one.t()
+one.th()
