@@ -63,6 +63,12 @@ def trans(name):
 		elif tokens[0]=="set":
 			o_l.append("class "+tokens[1])
 			print("KEYWORD FOUND: SET")
+		elif tokens[0]=="through":
+			o_l.append("from "+tokens[1]+" import "+tokens[2])
+			print("KEYWORD FOUND: THROUGH")
+		elif tokens[0]=="nothing":
+			o_l.append(t+"pass")
+			print("KEYWORD FOUND: NOTHING")
 		else:print("WARNING: No keywords detected at line "+str(l_n))
 		if line.endswith(":"):l_t+=1
 		l_n+=1
@@ -81,7 +87,7 @@ if argv[1]=="help":
 	print("transpile		Transpiles [file] into python from Oddsie.")
 	print("keywords		Shows list of Oddsie keywords.")
 elif argv[1]=="keywords":
-	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set")
+	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set,through,nothing")
 elif argv[1]=="transpile":
 	trans(argv[2])
 else:
