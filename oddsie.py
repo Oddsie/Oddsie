@@ -8,7 +8,7 @@ if argv[1]=="help":
 	print("transpile		Transpiles [file] into python from Oddsie.")
 	print("keywords		Shows list of Oddsie keywords.")
 if argv[1]=="keywords":
-	print("define,die,display,do,ifot,otherwise,end,if,loop,use,var")
+	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set")
 if argv[1]=="transpile":
 	i_f=open(argv[2])
 	o_f=open(argv[2].replace(".od","")+".py","w")
@@ -53,9 +53,9 @@ if argv[1]=="transpile":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"if "+tokens[1])
 			print("KEYWORD FOUND: IF")
-		elif tokens[0]=="loop":
+		elif tokens[0]=="fpr":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"for i in range("+tokens[1]+"):")
+			o_l.append(l_i+"for "+tokens[1])
 			print("KEYWORD FOUND: LOOP")
 		elif tokens[0]=="use":
 			for i in range(l_t):l_i=l_i+"\t"
