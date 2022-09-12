@@ -1,17 +1,9 @@
 from sys import argv
 import subprocess
 print("ODDSIE (c) 2022 LFWJ")
-if argv[1]=="help":
-	print("oddsie [option] [file]")
-	print("OPTIONS")
-	print("help			Brings up this menu.")
-	print("transpile		Transpiles [file] into python from Oddsie.")
-	print("keywords		Shows list of Oddsie keywords.")
-if argv[1]=="keywords":
-	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set")
-if argv[1]=="transpile":
-	i_f=open(argv[2])
-	o_f=open(argv[2].replace(".od","")+".py","w")
+def trans(name):
+	i_f=open(name)
+	o_f=open(name.replace(".od","")+".py","w")
 	o_l=[]
 	l_t=0
 	l_n=1
@@ -82,3 +74,15 @@ if argv[1]=="transpile":
 		o_f.write(item+"\n")
 		i+=1
 	print("Done")
+if argv[1]=="help":
+	print("oddsie [option] [file]")
+	print("OPTIONS")
+	print("help			Brings up this menu.")
+	print("transpile		Transpiles [file] into python from Oddsie.")
+	print("keywords		Shows list of Oddsie keywords.")
+elif argv[1]=="keywords":
+	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set")
+elif argv[1]=="transpile":
+	trans(argv[2])
+else:
+	trans(argv[1])
