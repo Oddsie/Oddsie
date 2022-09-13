@@ -3,7 +3,7 @@ Oddsie is a basic programming language that transpiles into Python. It is design
 # Install
 First place the OddsieLang-main folder in an easy to access place. Then run install.sh and input the directory in which you placed that folder.
 # Contribution
-If you would like to contribute to Oddsie, visit https://www.oddsie.github.io/site.
+If you would like to contribute to Oddsie, visit https://oddsie.github.io/site.
 # Requires
 - Python interpreter
 - Linux
