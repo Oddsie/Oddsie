@@ -1,5 +1,5 @@
-echo "Where is oddsie located? (full directory)"
+echo "Where is Oddsie located? (full directory)"
 read location
-cd location
+cd ~
 echo python3 oddsie.py $1 $2 > oddsie
-chmod +x oddsie
+echo alias oddsie='/home/$location/oddsie'>>.bashrc
