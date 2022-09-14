@@ -1,0 +1,65 @@
+through sys argv
+use subprocess
+display "ODDSIE (c) 2022 LFWJ"
+define trans(name):
+	var i_f=open(name)
+	var o_f=open(name.replace(".od","")+".py","w")
+	var o_l=[]
+	var l_t=0
+	var l_n=1
+	display "PROCESS: Starting lexing of "+i_f.name+"..."
+	for line in i_f:
+		var l_i=""
+		var l_t=int(l_t)
+		var line=line.replace("\n","")
+		var tokens=line.replace("\t","").split()
+		if tokens[0]=="end":
+			var l_t-=1
+			display "KEYWORD FOUND: END"
+		end
+		ifot tokens[0]=="define":
+			for i in range(l_t):
+				var l_i=l_i+"\t"
+			end
+			do o_l.append l_i+"def "+tokens[1]
+			display "KEYWORD FOUND: DEFINE"
+		end
+		ifot tokens[0]=="die":
+			for i in range(l_t):
+				var l_i=l_i+"\t"
+			end
+			do o_l.append l_i+"quit()"
+			display "KEYWORD FOUND: DIE"
+		end
+		ifot tokens[0]=="display":
+			for i in range(l_t):
+				var l_i=l_i+"\t"
+			end
+			do o_l.append l_i."print("+tokens[1].replace(";s"," ")+")"
+			display "KEYWORD FOUND: DISPLAY"
+		end
+		ifot tokens[0]=="do":
+			for i in range(l_t):
+				var l_i=l_i+"\t"
+			end
+			attempt:
+				do o_l.append l_i+tokens[1]+"("+tokens[2].replace(";s"," ")+")")
+			end
+			error:
+				do o_l.append l_i+tokens[1]+"()"
+			end
+		end
+		ifot tokens[0]=="ifot":
+			for i in range(l_t):
+				var l_i=l_i+"\t"
+			end
+			do o_l.append l_i+"elif "+tokens[1]
+			display "KEYWORD;sFOUND:;sIFOT")
+		end
+		ifot tokens[0]=="otherwise:":
+			for i in range(l_t):
+				var l_i=l_i+"\t"
+			end
+			do o_l.append l_i+"else:"
+			display "KEYWORD;sFOUND:;sOTHERWISE"
+		end
