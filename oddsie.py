@@ -45,7 +45,7 @@ def trans(name):
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"if "+tokens[1])
 			print("KEYWORD FOUND: IF")
-		elif tokens[0]=="fpr":
+		elif tokens[0]=="for":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"for "+tokens[1])
 			print("KEYWORD FOUND: LOOP")
