@@ -30,8 +30,8 @@ def trans(name):
 			print("KEYWORD FOUND: DISPLAY")
 		elif tokens[0]=="do":
 			for i in range(l_t):l_i=l_i+"\t"
-			try:o_l.append(tokens[1]+"("+tokens[2].replace(";s"," ")+")")
-			except IndexError:o_l.append(tokens[1]+"()")
+			try:o_l.append(l_i+tokens[1]+"("+tokens[2].replace(";s"," ")+")")
+			except IndexError:o_l.append(l_i+tokens[1]+"()")
 			print("KEYWORD FOUND: DO")
 		elif tokens[0]=="ifot":
 			for i in range(l_t):l_i=l_i+"\t"
