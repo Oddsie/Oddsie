@@ -58,17 +58,28 @@ def trans(name):
 			o_l.append(l_i+tokens[1].replace(";s"," "))
 			print("KEYWORD FOUND: VAR")
 		elif tokens[0]==";" or tokens[0]=="//":
-			o_l.append("#"+tokens[1].replace(";s"," "))
+			for i in range(l_t):l_i=l_i+"\t"
+			o_l.append(l_i+"#"+tokens[1].replace(";s"," "))
 			print("KEYWORD FOUND: COMMENT")
 		elif tokens[0]=="set":
+			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append("class "+tokens[1])
 			print("KEYWORD FOUND: SET")
 		elif tokens[0]=="through":
 			o_l.append("from "+tokens[1]+" import "+tokens[2])
 			print("KEYWORD FOUND: THROUGH")
 		elif tokens[0]=="nothing":
-			o_l.append(t+"pass")
+			for i in range(l_t):l_i=l_i+"\t"
+			o_l.append(l_i+"pass")
 			print("KEYWORD FOUND: NOTHING")
+		elif tokens[0]=="attempt:":
+			for i in range(l_t):l_i=l_i+"\t"
+			o_l.append(l_i+"try:")
+			print("KEYWORD FOUND: ATTEMPT")
+		elif tokens[0]=="error:":
+			for i in range(l_t):l_i=l_i+"\t"
+			o_l.append(l_i+"except:")
+			print("KEYWORD FOUND: ERROR")
 		else:print("WARNING: No keywords detected at line "+str(l_n))
 		if line.endswith(":"):l_t+=1
 		l_n+=1
