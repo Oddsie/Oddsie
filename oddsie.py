@@ -80,6 +80,7 @@ def trans(name):
 		o_f.write(item+"\n")
 		i+=1
 	print("Done")
+	return o_f.name
 if argv[1]=="help":
 	print("oddsie [option] [file]")
 	print("OPTIONS")
@@ -90,5 +91,7 @@ elif argv[1]=="keywords":
 	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set,through,nothing")
 elif argv[1]=="transpile":
 	trans(argv[2])
+elif argv[1]=="pyinstaller":
+	subprocess.run("pysintaller "+trans(argv[2]),shell=True)
 else:
 	trans(argv[1])
