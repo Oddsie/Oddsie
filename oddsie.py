@@ -54,7 +54,7 @@ def trans(name):
 			print("KEYWORD FOUND: USE")
 		elif tokens[0]=="var":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+tokens[1].replace(";s"," "))
+			o_l.append(l_i+tokens[1].replace(";s"," ")
 			print("KEYWORD FOUND: VAR")
 		elif tokens[0]==";" or tokens[0]=="//":
 			for i in range(l_t):l_i=l_i+"\t"
