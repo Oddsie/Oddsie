@@ -50,7 +50,6 @@ def trans(name):
 			o_l.append(l_i+"for "+tokens[1])
 			print("KEYWORD FOUND: LOOP")
 		elif tokens[0]=="use":
-			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append("import "+tokens[1])
 			print("KEYWORD FOUND: USE")
 		elif tokens[0]=="var":
