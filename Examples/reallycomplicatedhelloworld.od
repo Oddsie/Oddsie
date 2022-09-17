@@ -11,7 +11,7 @@ set HelloWorld1:
 		display txt
 	end
 end
-one=HelloWorld1()
-one.o()
-one.t()
-one.th()
+var one=HelloWorld1()
+do one.o
+do one.t
+do one.th
