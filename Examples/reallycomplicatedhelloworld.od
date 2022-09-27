@@ -1,17 +1,17 @@
-; ReallyComplicatedHelloWorld
-set HelloWorld1:
-	var txt=""
-	define o():
-		var txt=txt+"hello"
+;.ReallyComplicatedHelloWorld
+set.HelloWorld1:
+	var.txt=""
+	define.o():
+		var.txt=txt+"hello"
 	end
-	define t():
-		var txt=txt+";sworld!"
+	define.t():
+		var.txt=txt+";sworld!"
 	end
-	define th():
-		display txt
+	define.th():
+		display.txt
 	end
 end
-var one=HelloWorld1()
-do one.o
-do one.t
-do one.th
+var.one=HelloWorld1()
+do.one:o
+do.one:t
+do.one:th
