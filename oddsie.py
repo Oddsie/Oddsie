@@ -47,8 +47,8 @@ def trans(name):
 			print("KEYWORD FOUND: IF")
 		elif tokens[0]=="for":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"for "+tokens[1])
-			print("KEYWORD FOUND: LOOP")
+			o_l.append(l_i+"for "+tokens[1]+tokens[2])
+			print("KEYWORD FOUND: FOR")
 		elif tokens[0]=="use":
 			o_l.append("import "+tokens[1])
 			print("KEYWORD FOUND: USE")
