@@ -1,10 +1,10 @@
-use random
-display "NUMBER;sGUESS"
-var guess=int(input(":"))
-var actual=random.randint(1, 10)
-if guess==actual:
-	display "Good;sGuess!"
+use.random
+display."NUMBER;sGUESS"
+var.guess=int(input(":"))
+var.actual=random.randint(1, 10)
+if.guess==actual:
+	display."Good Guess!"
 end
 otherwise:
-	display "Incorrect!;sNumber;swas;s"+str(actual)+"!"
+	display."Incorrect! Number was "+str(actual)+"!"
 end
