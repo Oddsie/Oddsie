@@ -12,7 +12,7 @@ def trans(name):
 		l_i=""
 		l_t=int(l_t)
 		line=line.replace("\n","")
-		tokens=line.replace("\t","").split()
+		tokens=line.replace("\t","").split(".")
 		if tokens[0]=="end":
 			l_t-=1
 			print("KEYWORD FOUND: END")
@@ -26,11 +26,11 @@ def trans(name):
 			print("KEYWORD FOUND: DIE")
 		elif tokens[0]=="display":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"print("+tokens[1].replace(";s"," ")+")")
+			o_l.append(l_i+"print("+tokens[1].replace(",,",".")+")")
 			print("KEYWORD FOUND: DISPLAY")
 		elif tokens[0]=="do":
 			for i in range(l_t):l_i=l_i+"\t"
-			try:o_l.append(l_i+tokens[1]+"("+tokens[2].replace(";s"," ")+")")
+			try:o_l.append(l_i+tokens[1]+"("+tokens[2].replace(",,",".")+")")
 			except IndexError:o_l.append(l_i+tokens[1]+"()")
 			print("KEYWORD FOUND: DO")
 		elif tokens[0]=="ifot":
@@ -54,11 +54,11 @@ def trans(name):
 			print("KEYWORD FOUND: USE")
 		elif tokens[0]=="var":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+tokens[1].replace(";s"," ")
+			o_l.append(l_i+tokens[1].replace(",,",".")
 			print("KEYWORD FOUND: VAR")
 		elif tokens[0]==";" or tokens[0]=="//":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"#"+tokens[1].replace(";s"," "))
+			o_l.append(l_i+"#"+tokens[1].replace(",,","."))
 			print("KEYWORD FOUND: COMMENT")
 		elif tokens[0]=="set":
 			for i in range(l_t):l_i=l_i+"\t"
