@@ -1,6 +1,6 @@
-define main():
-  if SP=="YES":
-    display "Hello,;sWorld!"
+define.main():
+  if.SP=="YES":
+    display."Hello,;sWorld!"
   end
 end
-do main "YES"
+do.main."YES"
