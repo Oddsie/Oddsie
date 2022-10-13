@@ -87,7 +87,13 @@ def trans(name):
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"return "+tokens[1])
 		elif tokens[0]=="about":
-			"
+			print("Dear User,")
+			print("Thank you so very much for using Oddsie.")
+			print("I have put a ton of thought into this project.")
+			print("I know it's a stupid idea, but it's the first")
+			print("working programming language I've ever made!")
+			print("And I'm very proud of it.")
+			print("Regards,\n\tLeander Francis Westren Johns")
 		else:print("WARNING: No keywords detected at line "+str(l_n))
 		if line.endswith(":"):l_t+=1
 		l_n+=1
