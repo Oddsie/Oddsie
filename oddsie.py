@@ -75,13 +75,19 @@ def trans(name):
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"try:")
 			print("KEYWORD FOUND: ATTEMPT")
-		elif tokens[0]=="error:":
+		elif tokens[0]=="onerror:":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"except:")
-			print("KEYWORD FOUND: ERROR")
+			print("KEYWORD FOUND: ONERROR")
+		elif tokens[0]=="lastly":
+			for i in range(l_t):l_i=l_i+"\t"
+			o_l.append(l_i+"finally:")
+			print("KEYWORD FOUND: LASTLY")
 		elif tokens[0]=="give":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"return "+tokens[1])
+		elif tokens[0]=="":
+			
 		else:print("WARNING: No keywords detected at line "+str(l_n))
 		if line.endswith(":"):l_t+=1
 		l_n+=1
