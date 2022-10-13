@@ -86,8 +86,8 @@ def trans(name):
 		elif tokens[0]=="give":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"return "+tokens[1])
-		elif tokens[0]=="":
-			
+		elif tokens[0]=="about":
+			"
 		else:print("WARNING: No keywords detected at line "+str(l_n))
 		if line.endswith(":"):l_t+=1
 		l_n+=1
