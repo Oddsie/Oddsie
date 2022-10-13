@@ -86,7 +86,7 @@ def trans(name):
 		elif tokens[0]=="give":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"return "+tokens[1])
-		elif tokens[0]=="about":
+		elif tokens[0]=="letter":
 			print("Dear User,")
 			print("Thank you so very much for using Oddsie.")
 			print("I have put a ton of thought into this project.")
