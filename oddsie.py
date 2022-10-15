@@ -12,7 +12,7 @@ def trans(name):
 		l_i=""
 		l_t=int(l_t)
 		line=line.replace("\n","")
-		tokens=line.replace("\t","").split(".")
+		tokens=line.replace("\t","").split("-")
 		if tokens[0]=="end":
 			l_t-=1
 			print("KEYWORD FOUND: END")
