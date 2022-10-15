@@ -94,7 +94,10 @@ def trans(name):
 			print("working programming language I've ever made!")
 			print("And I'm very proud of it.")
 			print("Regards,\n\tLeander Francis Westren Johns")
-		else:print("WARNING: No keywords detected at line "+str(l_n))
+		else:
+			print("ERROR: Incorrect or no keywords detected at line "+str(l_n)+".")
+			print(line)
+			quit()
 		if line.endswith(":"):l_t+=1
 		l_n+=1
 	print("Done")
