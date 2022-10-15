@@ -1,5 +1,5 @@
-display."Welcome;sto;sCalculord!"
-var.op=input(": ")
-var.num1=input()
-var.num2=input()
-display.eval(num1+op+num2)
+display-"Welcome to Calculord!"
+var-op=input(": ")
+var-num1=input()
+var-num2=input()
+display-eval(num1+op+num2)
