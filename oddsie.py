@@ -115,8 +115,6 @@ if argv[1]=="help":
 	print("help\t\t\tBrings up this menu.")
 	print("transpile\t\tTranspiles [file] into python from Oddsie.")
 	print("keywords\tShows list of Oddsie keywords.")
-elif argv[1]=="keywords":
-	print("define,die,display,do,ifot,otherwise,end,if,for,use,var,set,through,nothing,give")
 elif argv[1]=="transpile":
 	trans(argv[2])
 elif argv[1]=="pyinstaller":
