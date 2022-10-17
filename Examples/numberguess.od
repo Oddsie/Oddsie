@@ -1,5 +1,5 @@
 use-random
-display-"NUMBER;sGUESS"
+display-"NUMBER GUESS"
 var-guess=int(input(":"))
 var-actual=random.randint(1, 10)
 if-guess==actual:
