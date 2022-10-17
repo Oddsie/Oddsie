@@ -3,7 +3,7 @@
 Oddsie is designed to be an alternative to Python. Think of it as Python's weird sibling. It is also fully compatible with Python.
 # Examples
 numberguess.od: A simple number-guessing game.
-```
+```oddsie
 use-random
 display-"NUMBER GUESS"
 var-guess=int(input(":"))
@@ -16,7 +16,24 @@ otherwise:
 end
 ```
 reallycomplicatedhelloworld.od: Overly complicated Hello, World! program.
-```
+```oddsie
+;-Really Complicated Hello World
+set-HelloWorld:
+	var-txt=""
+	define-uno():
+		var-txt=txt+"Hello, "
+	end
+	define-dos():
+		var-txt=txt+" world!"
+	end
+	define-tres():
+		display-txt
+	end
+end
+var-hw=HelloWorld()
+do-hw:uno
+do-hw:dos
+do-hw:tres
 ```
 # What do I need to code in Oddsie?
 - Linux
