@@ -14,7 +14,7 @@ otherwise:
 	display-"Incorrect! Number was "+str(actual)+"!"
 end
 ```
-*^numberguess.od: A simple number-guessing game.^*
+*^ numberguess.od ^*
 ```oddsie
 ;-Really Complicated Hello World
 set-HelloWorld:
@@ -34,7 +34,7 @@ do-hw:uno
 do-hw:dos
 do-hw:tres
 ```
-*^reallycomplicatedhelloworld.od: Overly complicated Hello, World! program.^*
+*^ reallycomplicatedhelloworld.od ^*
 # What do I need to code in Oddsie?
 - Linux
 - Python 3.7 and up
