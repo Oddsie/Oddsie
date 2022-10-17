@@ -1,13 +1,11 @@
 # What is Oddsie?
-Oddsie is a programming language which transpiles to Python.  
-FUN FACT ALERT: The name "Oddsie" comes from my cat Odds' nickname.  
-I have big dreams for Oddsie. Since it's the first (working) programming language I've ever made.  
-SITE: https://oddsie.github.io/site
+ Oddsie is a programming language which can be transpiled to Python or can be "compiled" by using Pyinstaller (To do that Pyinstaller must be installed).  
+Oddsie is designed to be an alternative to Python. Think of it as Python's weird sibling. It is also fully compatible with Python.
 # Example
 numberguess.od: A simple number-guessing game.
 ```
 use-random
-display-"NUMBER;sGUESS"
+display-"NUMBER GUESS"
 var-guess=int(input(":"))
 var-actual=random.randint(1, 10)
 if-guess==actual:
