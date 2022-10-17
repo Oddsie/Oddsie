@@ -1,17 +1,17 @@
-;-ReallyComplicatedHelloWorld
-set-HelloWorld1:
+;-Really Complicated Hello World
+set-HelloWorld:
 	var-txt=""
-	define-o():
-		var-txt=txt+"hello"
+	define-uno():
+		var-txt=txt+"Hello, "
 	end
-	define-t():
+	define-dos():
 		var-txt=txt+" world!"
 	end
-	define-th():
+	define-tres():
 		display-txt
 	end
 end
-var-one=HelloWorld1()
-do-one:o
-do-one:t
-do-one:th
+var-hw=HelloWorld()
+do-hw:uno
+do-hw:dos
+do-hw:tres
