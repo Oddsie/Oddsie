@@ -13,7 +13,7 @@ def trans(name):
 		l_t=int(l_t)
 		line=line.replace("\n","")
 		tokens=line.replace("\t","").split("-")
-		if tokens[0]=="end":
+		if tokens[0]==")":
 			l_t-=1
 			print("KEYWORD FOUND: END")
 		elif tokens[0]=="define":
@@ -98,7 +98,7 @@ def trans(name):
 			print("ERROR: Incorrect or no keywords detected at line "+str(l_n)+".")
 			print(line)
 			quit()
-		if line.endswith(":"):l_t+=1
+		if line.endswith("("):l_t+=1
 		l_n+=1
 	print("Done")
 	print("PROCESS: Starting to write translation to "+o_f.name+"...")
