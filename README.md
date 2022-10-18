@@ -7,28 +7,28 @@ use-random
 display-"NUMBER GUESS"
 var-guess=int(input(":"))
 var-actual=random.randint(1, 10)
-if-guess==actual:
+if-guess==actual(
 	display-"Good Guess!"
-end
-otherwise:
+)
+otherwise(
 	display-"Incorrect! Number was "+str(actual)+"!"
-end
+)
 ```
 *^ numberguess.od ^*
 ```oddsie
 ;-Really Complicated Hello World
-set-HelloWorld:
+set-HelloWorld-(
 	var-txt=""
-	define-uno():
+	define-uno()-(
 		var-txt=txt+"Hello, "
-	end
-	define-dos():
+	)
+	define-dos()-(
 		var-txt=txt+" world!"
-	end
-	define-tres():
+	)
+	define-tres()-(
 		display-txt
-	end
-end
+	)
+)
 var-hw=HelloWorld()
 do-hw:uno
 do-hw:dos
