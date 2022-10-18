@@ -12,13 +12,13 @@ def trans(name):
 		l_i=""
 		l_t=int(l_t)
 		line=line.replace("\n","")
-		tokens=line.replace("\t","").split("-")
+		tokens=line.replace("\t","").split(":")
 		if tokens[0]==")":
 			l_t-=1
 			print("KEYWORD FOUND: END")
 		elif tokens[0]=="define":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"def "+tokens[1])
+			o_l.append(l_i+"def "+tokens[1]+":")
 			print("KEYWORD FOUND: DEFINE")
 		elif tokens[0]=="die":
 			for i in range(l_t):l_i=l_i+"\t"
@@ -30,14 +30,14 @@ def trans(name):
 			print("KEYWORD FOUND: DISPLAY")
 		elif tokens[0]=="do":
 			for i in range(l_t):l_i=l_i+"\t"
-			try:o_l.append(l_i+tokens[1].replace(":","."+"("+tokens[2]+")")
+			try:o_l.append(l_i+tokens[1]+"("+tokens[2]+")")
 			except IndexError:o_l.append(l_i+tokens[1]+"()")
 			print("KEYWORD FOUND: DO")
 		elif tokens[0]=="ifot":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"elif "+tokens[1])
 			print("KEYWORD FOUND: IFOT")
-		elif tokens[0]=="otherwise:":
+		elif tokens[0]=="otherwise(":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"else:")
 			print("KEYWORD FOUND: OTHERWISE")
@@ -62,7 +62,7 @@ def trans(name):
 			print("KEYWORD FOUND: COMMENT")
 		elif tokens[0]=="set":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append("class "+tokens[1])
+			o_l.append("class "+tokens[1]+"(")
 			print("KEYWORD FOUND: SET")
 		elif tokens[0]=="through":
 			o_l.append("from "+tokens[1]+" import "+tokens[2])
