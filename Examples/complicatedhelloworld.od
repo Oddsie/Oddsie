@@ -1,6 +1,0 @@
-define-main():
-  if-SP=="YES":
-    display-"Hello, World!"
-  end
-end
-do-main-"YES"
