@@ -17,7 +17,7 @@ otherwise(
 *^ Simple number-guessing game ^*
 ```oddsie
 ;:Really Complicated Hello World
-set:HelloWorld-(
+set:HelloWorld:(
 	var:txt=""
 	define:uno():(
 		var:txt=txt+"Hello, "
