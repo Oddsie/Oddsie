@@ -11,14 +11,14 @@ def trans(name):
 	for line in i_f:
 		l_i=""
 		l_t=int(l_t)
-		line=line.replace("\n","")
-		tokens=line.replace("\t","").split(":")
-		if tokens[0]==")":
+		line=line.replace("\n","").replace("\t","")
+		tokens=line.split(" ")
+		if tokens[0]=="end":
 			l_t-=1
 			print("KEYWORD FOUND: END")
-		elif tokens[0]=="define":
+		elif tokens[0]=="function":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"def "+tokens[1]+":")
+			o_l.append(l_i+"def "+tokens[1])
 			print("KEYWORD FOUND: DEFINE")
 		elif tokens[0]=="die":
 			for i in range(l_t):l_i=l_i+"\t"
@@ -26,7 +26,7 @@ def trans(name):
 			print("KEYWORD FOUND: DIE")
 		elif tokens[0]=="display":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"print("+tokens[1].replace(",,",".")+")")
+			o_l.append(l_i+"print("+tokens[1].replace("\\s"," ")+")")
 			print("KEYWORD FOUND: DISPLAY")
 		elif tokens[0]=="do":
 			for i in range(l_t):l_i=l_i+"\t"
@@ -37,7 +37,7 @@ def trans(name):
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"elif "+tokens[1])
 			print("KEYWORD FOUND: IFOT")
-		elif tokens[0]=="otherwise(":
+		elif tokens[0]=="otherwise:":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"else:")
 			print("KEYWORD FOUND: OTHERWISE")
@@ -56,13 +56,13 @@ def trans(name):
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+tokens[1].replace(",,",".")
 			print("KEYWORD FOUND: VAR")
-		elif tokens[0]==";" or tokens[0]=="//":
+		elif tokens[0]==";;" or tokens[0]=="//":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"#"+tokens[1].replace(",,","."))
 			print("KEYWORD FOUND: COMMENT")
 		elif tokens[0]=="set":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append("class "+tokens[1]+"(")
+			o_l.append("class "+tokens[1])
 			print("KEYWORD FOUND: SET")
 		elif tokens[0]=="through":
 			o_l.append("from "+tokens[1]+" import "+tokens[2])
@@ -79,7 +79,7 @@ def trans(name):
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"except:")
 			print("KEYWORD FOUND: ONERROR")
-		elif tokens[0]=="lastly":
+		elif tokens[0]=="lastly:":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"finally:")
 			print("KEYWORD FOUND: LASTLY")
@@ -98,7 +98,7 @@ def trans(name):
 			print("ERROR: Incorrect or no keywords detected at line "+str(l_n)+".")
 			print(line)
 			quit()
-		if line.endswith("("):l_t+=1
+		if line.endswith(":"):l_t+=1
 		l_n+=1
 	print("Done")
 	print("PROCESS: Starting to write translation to "+o_f.name+"...")
