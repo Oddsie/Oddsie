@@ -94,6 +94,7 @@ def trans(name):
 			print("working programming language I've ever made!")
 			print("And I'm very proud of it.")
 			print("Regards,\n\tLeander Francis Westren Johns")
+			quit()
 		else:
 			print("ERROR: Incorrect or no keywords detected at line "+str(l_n)+".")
 			print(line)
