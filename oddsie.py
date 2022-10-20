@@ -19,7 +19,7 @@ def trans(name):
 		elif tokens[0]=="function":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"def "+tokens[1])
-			print("KEYWORD FOUND: DEFINE")
+			print("KEYWORD FOUND: FUNCTION")
 		elif tokens[0]=="die":
 			for i in range(l_t):l_i=l_i+"\t"
 			o_l.append(l_i+"quit()")
@@ -54,7 +54,7 @@ def trans(name):
 			print("KEYWORD FOUND: USE")
 		elif tokens[0]=="var":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+tokens[1].replace(",,",".")
+			o_l.append(l_i+tokens[1])
 			print("KEYWORD FOUND: VAR")
 		elif tokens[0]==";;" or tokens[0]=="//":
 			for i in range(l_t):l_i=l_i+"\t"
