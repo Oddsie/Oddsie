@@ -20,7 +20,7 @@ end
 set HelloWorld:
 	var txt=""
 	function uno():
-		var txt=txt+"Hello,\s"
+		var txt=txt+"Hello,"
 	end
 	function dos():
 		var txt=txt+"\sworld!"
