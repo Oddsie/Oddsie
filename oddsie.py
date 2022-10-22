@@ -121,6 +121,8 @@ elif argv[1]=="transpile":
 elif argv[1]=="pyinstaller":
 	subprocess.run("pysintaller "+trans(argv[2]),shell=True)
 elif argv[1]=="interpret":
-	subprocess.run("python3 "+trans(argv[2]),shell=True)
+	o=trans(argv[2])
+	subprocess.run("clear && python3 "+o+" && rm "+o,shell=True)
 else:
-	trans(argv[1])
+	o=trans(argv[2])
+	subprocess.run("clear && python3 "+o+" && rm "+o,shell=True)
