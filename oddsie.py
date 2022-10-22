@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from sys import argv
 import subprocess
 print("ODDSIE (c) 2022 LFWJ")
