@@ -116,7 +116,7 @@ if argv[1]=="help":
 	print("OPTIONS")
 	print("help\t\t\tBrings up this menu.")
 	print("transpile\t\tTranspiles [file] into python from Oddsie.")
-	print("keywords\tShows list of Oddsie keywords.")
+	print("interpret\t\tTranspiles [file] and runs it using Python.")
 elif argv[1]=="transpile":
 	trans(argv[2])
 elif argv[1]=="pyinstaller":
