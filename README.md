@@ -25,7 +25,7 @@ set HelloWorld:
 	function dos():
 		var txt=txt+"\sworld!"
 	end
-	function tres()
+	function tres():
 		display txt
 	end
 end
