@@ -58,7 +58,7 @@ def trans(name):
 			print("KEYWORD FOUND: VAR")
 		elif tokens[0]==";;" or tokens[0]=="//":
 			for i in range(l_t):l_i=l_i+"\t"
-			o_l.append(l_i+"#"+tokens[1].replace(",,","."))
+			o_l.append(l_i+line.replace(tokens[0],"#")
 			print("KEYWORD FOUND: COMMENT")
 		elif tokens[0]=="set":
 			for i in range(l_t):l_i=l_i+"\t"
