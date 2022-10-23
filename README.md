@@ -36,6 +36,6 @@ do hw.tres
 ```
 *^ An overly complicated Hello, World! program ^*
 # What do I need to code in Oddsie?
-- Linux (NO OTHER OS!!)
+- Linux (Won't work on Windows)
 - Python 3.7 and up
 - Oddsie
