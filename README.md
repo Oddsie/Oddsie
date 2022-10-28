@@ -2,7 +2,7 @@
  Oddsie is a programming language which can be transpiled to Python, can be "compiled" by using Pyinstaller (To do that Pyinstaller must be installed) or can be "interpreted".  
 Oddsie is designed to be an alternative to Python. Think of it as Python's weird sibling. It is also fully compatible with Python.
 # Examples
-```oddsie
+```lua
 use random
 display "NUMBER\sGUESS"
 var guess=int(input(":"))
@@ -15,7 +15,7 @@ otherwise:
 end
 ```
 *^ Simple number-guessing game ^*
-```oddsie
+```lua
 ;; Really Complicated Hello World
 set HelloWorld:
 	var txt=""
