@@ -2,27 +2,17 @@
 from sys import argv
 import os
 import subprocess
-
 from rich import print
 from rich.table import Table
-
 table_commands = Table(title="Commands")
-
 table_commands.add_column("Command", style="cyan", no_wrap=True)
 table_commands.add_column("Use", style="magenta")
-table_commands.add_column("No", justify="right", style="green")
-
-table_commands.add_row("help", "Get info about the commands.", "1")
-table_commands.add_row("run (filename)", "Run code.", "2")
-table_commands.add_row("interpret (filename)", "To python code.", "3")
-table_commands.add_row("pyinstaller (filename)", "Make exe.", "4")
-
-
-table_commands.add_row("upload (modulename) (folder/filename) (password-a_key_with_20+chars)","Upload a module","5")
-table_commands.add_row("install (modulename)","install a module","6")
-
-
-
+table_commands.add_column("No.", justify="right", style="green")
+table_commands.add_row("help", "Show this menu.", "1")
+table_commands.add_row("interpret (filename)", "To python code.", "2")
+table_commands.add_row("compile (filename)", "Make executabl with Pyinstaller.", "3")
+table_commands.add_row("install (Github) (Repo)","Install a module","5")
+print(table_commands)
 print("[blue]ODDSIE (c) 2022 LFWJ[/blue]")
 def trans(name):
 	i_f=open(name)
@@ -136,17 +126,13 @@ def trans(name):
 if argv[1]=="help":
 	print(table_commands)
 elif argv[1]=="interpret":
-	trans(argv[2])
-	print("[green] [ + ] DONE... [/green]")	
-
-elif argv[1]=="pyinstaller":
-	subprocess.run("pysintaller "+trans(argv[2]),shell=True)
-	print("[green] [ + ] DONE... [/green]")	
-elif argv[1]=="run":
 	o=trans(argv[2])
 	subprocess.run("clear",shell=True)
 	print("[green] [ + ] RUNNING CODE INTERPRETED BY ODDSIE... [/green]")
 	subprocess.run("python3 "+o+" && rm "+o,shell=True)
+elif argv[1]=="compile:
+	subprocess.run("pysintaller "+trans(argv[2]),shell=True)
+	print("[green] [ + ] DONE... [/green]")	
 else:
 	o=trans(argv[2])
 	subprocess.run("clear && python3 "+o+" && rm "+o,shell=True)
