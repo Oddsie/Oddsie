@@ -1,7 +1,29 @@
 #!/usr/bin/python3
 from sys import argv
+import os
 import subprocess
-print("ODDSIE (c) 2022 LFWJ")
+
+from rich import print
+from rich.table import Table
+
+table_commands = Table(title="Commands")
+
+table_commands.add_column("Command", style="cyan", no_wrap=True)
+table_commands.add_column("Use", style="magenta")
+table_commands.add_column("No", justify="right", style="green")
+
+table_commands.add_row("help", "Get info about the commands.", "1")
+table_commands.add_row("run (filename)", "Run code.", "2")
+table_commands.add_row("interpret (filename)", "To python code.", "3")
+table_commands.add_row("pyinstaller (filename)", "Make exe.", "4")
+
+
+table_commands.add_row("upload (modulename) (folder/filename) (password-a_key_with_20+chars)","Upload a module","5")
+table_commands.add_row("install (modulename)","install a module","6")
+
+
+
+print("[blue]ODDSIE (c) 2022 LFWJ[/blue]")
 def trans(name):
 	i_f=open(name)
 	o_f=open(name.replace(".od","")+".py","w")
@@ -112,18 +134,19 @@ def trans(name):
 	print("Done")
 	return o_f.name
 if argv[1]=="help":
-	print("oddsie [option] [file]")
-	print("OPTIONS")
-	print("help\t\t\tBrings up this menu.")
-	print("transpile\t\tTranspiles [file] into python from Oddsie.")
-	print("interpret\t\tTranspiles [file] and runs it using Python.")
-elif argv[1]=="transpile":
+	print(table_commands)
+elif argv[1]=="interpret":
 	trans(argv[2])
+	print("[green] [ + ] DONE... [/green]")	
+
 elif argv[1]=="pyinstaller":
 	subprocess.run("pysintaller "+trans(argv[2]),shell=True)
-elif argv[1]=="interpret":
+	print("[green] [ + ] DONE... [/green]")	
+elif argv[1]=="run":
 	o=trans(argv[2])
-	subprocess.run("clear && python3 "+o+" && rm "+o,shell=True)
+	subprocess.run("clear",shell=True)
+	print("[green] [ + ] RUNNING CODE INTERPRETED BY ODDSIE... [/green]")
+	subprocess.run("python3 "+o+" && rm "+o,shell=True)
 else:
 	o=trans(argv[2])
 	subprocess.run("clear && python3 "+o+" && rm "+o,shell=True)
